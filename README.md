@@ -1,3 +1,5 @@
+This the branch `calibration_devel_moveit_cleanup` from `git@github.com:davetcoleman/universal_robot.git` with the CHANGELOG.rst files cleaned up and the version bumped to 1.2.8.
+
 # Universal Robot
 
 [![Build Status](http://build.ros.org/job/Kdev__universal_robot__ubuntu_xenial_amd64/badge/icon)](http://build.ros.org/job/Kdev__universal_robot__ubuntu_xenial_amd64)
@@ -33,7 +35,7 @@ There are releases available for ROS Hydro, Indigo and Kinetic. However, for the
 
 The following instructions assume that a [Catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) has been created at `$HOME/catkin_ws` and that the source space is at `$HOME/catkin_ws/src`. Update paths appropriately if they are different on the build machine.
 
-In all other cases the packages will have to be build from sources in a Catkin workspace: 
+In all other cases the packages will have to be build from sources in a Catkin workspace:
 
 ```
 cd $HOME/catkin_ws/src
@@ -58,23 +60,23 @@ source $HOME/catkin_ws/devel/setup.bash
 __Usage__
 
 ___With real Hardware___
-There are launch files available to bringup a real robot - either UR5 or UR10.  
+There are launch files available to bringup a real robot - either UR5 or UR10.
 In the following the commands for the UR5 are given. For the UR10, simply replace the prefix accordingly.
 
-Don't forget to source the correct setup shell files and use a new terminal for each command!   
+Don't forget to source the correct setup shell files and use a new terminal for each command!
 
 To bring up the real robot, run:
 
 ```roslaunch ur_bringup ur5_bringup.launch robot_ip:=IP_OF_THE_ROBOT [reverse_port:=REVERSE_PORT]```
 
 
-CAUTION:  
+CAUTION:
 Remember that you should always have your hands on the big red button in case there is something in the way or anything unexpected happens.
 
 
-___MoveIt! with real Hardware___  
-Additionally, you can use MoveIt! to control the robot.  
-There exist MoveIt! configuration packages for both robots.  
+___MoveIt! with real Hardware___
+Additionally, you can use MoveIt! to control the robot.
+There exist MoveIt! configuration packages for both robots.
 
 For setting up the MoveIt! nodes to allow motion planning run:
 
@@ -85,8 +87,8 @@ For starting up RViz with a configuration including the MoveIt! Motion Planning 
 ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```
 
 
-NOTE:  
-As MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version, simply use the launch file arguments 'limited', i.e.:  
+NOTE:
+As MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version, simply use the launch file arguments 'limited', i.e.:
 
 ```roslaunch ur_bringup ur5_bringup.launch limited:=true robot_ip:=IP_OF_THE_ROBOT [reverse_port:=REVERSE_PORT]```
 
@@ -95,19 +97,19 @@ As MoveIt! seems to have difficulties with finding plans for the UR with full jo
 ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```
 
 
-___Usage with Gazebo Simulation___  
-There are launch files available to bringup a simulated robot - either UR5 or UR10.  
+___Usage with Gazebo Simulation___
+There are launch files available to bringup a simulated robot - either UR5 or UR10.
 In the following the commands for the UR5 are given. For the UR10, simply replace the prefix accordingly.
 
-Don't forget to source the correct setup shell files and use a new terminal for each command!   
+Don't forget to source the correct setup shell files and use a new terminal for each command!
 
 To bring up the simulated robot in Gazebo, run:
 
 ```roslaunch ur_gazebo ur5.launch```
 
 
-___MoveIt! with a simulated robot___  
-Again, you can use MoveIt! to control the simulated robot.  
+___MoveIt! with a simulated robot___
+Again, you can use MoveIt! to control the simulated robot.
 
 For setting up the MoveIt! nodes to allow motion planning run:
 
@@ -118,8 +120,8 @@ For starting up RViz with a configuration including the MoveIt! Motion Planning 
 ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```
 
 
-NOTE:  
-As MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version, simply use the launch file arguments 'limited', i.e.:  
+NOTE:
+As MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version, simply use the launch file arguments 'limited', i.e.:
 
 ```roslaunch ur_gazebo ur5.launch limited:=true```
 
